@@ -12,6 +12,9 @@ export default class Counter extends Component{
     if (this.state.count >= 0 ){
     } else {
             Alert.alert('Value Not Accepted!')
+            this.setState({
+                count: this.state.count 
+            })
     };
     return (
       <View style= {styles.container}>
@@ -29,16 +32,9 @@ export default class Counter extends Component{
         <Button
             style= {styles.container}
             title="-"
-            onPress={() => { 
-                if (this.setState.count >= 0){
-                    return(
-                    this.setState({
-                        count: this.setState.count - 1   
-                })
-            );
-            } else {        
-                Alert.alert('Value Not Accepted!')
-        } 
+            onPress={() => {this.setState({
+                count: this.state.count - 1
+            })
         }}
 
         />
